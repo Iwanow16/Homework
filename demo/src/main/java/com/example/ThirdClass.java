@@ -5,7 +5,7 @@ import java.io.InterruptedIOException;
 public class ThirdClass {
 
     public static boolean ifReturn(){
-        if (returnTrue() && SecondClass.returnTrue()) 
+        if (returnTrue() && SecondClass.returnTrue() && ThirdClass.returnTrue() && FourthClass.returnTrue()) 
             return true;
         return false;
     }
