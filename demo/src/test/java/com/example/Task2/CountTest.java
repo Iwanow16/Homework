@@ -7,7 +7,7 @@ import com.example.*;
 public class CountTest {
     
     @Test
-    public void howManyTimesWasCalled(){
+    public void howManyWasCalled(){
         SecondClass secondClass = mock(SecondClass.class);
         secondClass.callMethods();
         verify(secondClass).callMethods();
