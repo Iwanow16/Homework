@@ -72,7 +72,7 @@ public class Blacksmith {
         this.isCreate = isCreate;
     }
 
-    private static String privateMethod(){
+    private String privateTest(){
         return "Private method";
     }
 }
