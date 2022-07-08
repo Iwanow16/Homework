@@ -71,7 +71,7 @@ public class Blacksmith {
     public void setCreate(boolean isCreate) {
         this.isCreate = isCreate;
     }
-
+ 
     private String privateTest(){
         return "Private method";
     }

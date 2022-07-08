@@ -4,7 +4,6 @@ import static org.mockito.Mockito.*;
 import org.powermock.api.mockito.*;
 import static org.junit.Assert.*;
 
-import org.powermock.reflect.Whitebox;
 import java.lang.reflect.Method;
 import org.junit.Test;
 
@@ -13,11 +12,10 @@ public class BlacksmithTest {
     // Задание 1
     @Test
     public void stuffTitleTest() {
-        Blacksmith blacksmith = mock(Blacksmith.class);
-        Stuff shovel = new Stuff("Лопата", "Сталь");
-        blacksmith.orderStuff("Лопата", "Железо");
-        doReturn("Лопата").when(blacksmith).getStuffTitle();
-        doReturn("Железо").when(blacksmith).getStuffMaterial();
+        Stuff shovel = mock(Stuff.class);
+        Blacksmith blacksmith = new Blacksmith();
+        blacksmith.setStuff(shovel);
+        doReturn("Лопата").when(shovel).getTitle();
         assertEquals(blacksmith.getStuffTitle(), shovel.getTitle());
     }
 
@@ -48,10 +46,3 @@ public class BlacksmithTest {
         assertEquals("Private method", result);
     }   
 }
-
- /*
-        PowerMockito.when(blacksmith, "privateTest").thenReturn("");
-        String result = Whitebox.invokeMethod(blacksmith, "privateTest");
-        ↓
-        java.lang.reflect.InaccessibleObjectException
-        */
