@@ -1,4 +1,4 @@
-package com.example;
+package com.example.StreamTests;
 
 import org.junit.Test;
 import java.util.HashMap;
@@ -38,7 +38,6 @@ public class StreamTest {
     // Задание 2
     @Test
     public void setToMapTest() {
-        StreamsClass streamsClass = new StreamsClass();
         Map<String, String> expectMap = new HashMap<>();
         expectMap.put("Salt Lake City", "14");
         expectMap.put("Hammondsport", "12");
@@ -46,7 +45,7 @@ public class StreamTest {
         expectMap.put("North Canton", "12");
         expectMap.put("Indianapolis", "12");
 
-        assertEquals(expectMap, streamsClass.setToMap(set));
+        assertEquals(expectMap, new StreamsClass().setToMap(set));
     }
 
     // Задание 3
@@ -63,7 +62,6 @@ public class StreamTest {
     // Задание 4
     @Test
     public void createNewExemplarIfNullTest() {
-        StreamsClass streamsClass = new StreamsClass();
-        assertNotNull(streamsClass.createNewExemplarIfNull(null));
+        assertNotNull(new StreamsClass().createNewExemplarIfNull(null));
     }
 }
