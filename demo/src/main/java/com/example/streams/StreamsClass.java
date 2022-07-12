@@ -47,7 +47,6 @@ public class StreamsClass {
 
     // Задание 4
     public String createNewExemplarIfNull(String nullName) {
-        nullName = null;
         return Optional.ofNullable(nullName).orElseGet(String::new);
     }
 }

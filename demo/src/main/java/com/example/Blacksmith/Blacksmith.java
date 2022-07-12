@@ -1,4 +1,4 @@
-package com.example.Blacksmith;
+package com.example.blacksmith;
 
 public class Blacksmith {
     

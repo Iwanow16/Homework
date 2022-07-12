@@ -1,18 +1,20 @@
-package com.example.StreamTests;
+package com.example.streamTest;
 
 import org.junit.Test;
+
+import com.example.streams.StreamsClass;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import com.example.streams.StreamsClass;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class StreamTest {
+public class StreamTests {
     
-    Set<String> set = Set.of(
+    private final static Set<String> set = Set.of(
             "Elkhart Lake",
             "North Canton",
             "Hammondsport",
