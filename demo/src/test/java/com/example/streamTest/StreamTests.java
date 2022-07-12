@@ -14,7 +14,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class StreamTests {
     
-    private final static Set<String> set = Set.of(
+    private final static Set<String> SET = Set.of(
             "Elkhart Lake",
             "North Canton",
             "Hammondsport",
@@ -47,14 +47,14 @@ public class StreamTests {
         expectMap.put("North Canton", "12");
         expectMap.put("Indianapolis", "12");
 
-        assertEquals(expectMap, new StreamsClass().setToMap(set));
+        assertEquals(expectMap, new StreamsClass().setToMap(SET));
     }
 
     // Задание 3
     @Test
     public void mapToList() {
         StreamsClass streamsClass = new StreamsClass();
-        Map<String, String> map = streamsClass.setToMap(set);
+        Map<String, String> map = streamsClass.setToMap(SET);
         List<String> mapToListFormat = streamsClass.mapToListFormat(map);
         List<String> mapToListKeyAndValue = streamsClass.mapToListKeyAndValue(map);
         assertEquals(mapToListFormat.get(0), "Salt Lake City == 14");
