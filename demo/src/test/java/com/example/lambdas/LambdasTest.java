@@ -1,10 +1,6 @@
-package com.example.lambdaTest;
+package com.example.lambdas;
 
 import org.junit.Test;
-
-import com.example.lambdas.FunctionalInterfaceWithOneArg;
-import com.example.lambdas.FunctionalInterfaceWithTwoArgs;
-import com.example.lambdas.LambdaProgram;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,8 +1,6 @@
-package com.example.streamTest;
+package com.example.streams;
 
 import org.junit.Test;
-
-import com.example.streams.StreamsClass;
 
 import java.util.HashMap;
 import java.util.List;
