@@ -1,10 +1,8 @@
-package com.example.blacksmithTest;
+package com.example.blacksmith;
 
 import org.junit.Test;
 import java.lang.reflect.Method;
 import org.powermock.api.mockito.*;
-
-import com.example.blacksmith.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

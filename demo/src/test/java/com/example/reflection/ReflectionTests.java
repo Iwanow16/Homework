@@ -1,4 +1,4 @@
-package com.example.reflectionTest;
+package com.example.reflection;
 
 import org.junit.Test;
 import java.util.Arrays;
@@ -6,40 +6,38 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import com.example.reflection.Reflection;
 
 public class ReflectionTests {
     
-    private static final Reflection reflection = new Reflection();
-    private static final Class<? extends Reflection> clazz = reflection.getClass();
+    private static final Reflection REFLECTION = new Reflection();
+    private static final Class<? extends Reflection> CLAZZ = REFLECTION.getClass();
 
     // Задание 1
     @Test 
     public void firstTaskTest() throws NoSuchFieldException, IllegalAccessException {
-        Field privateField = clazz.getDeclaredField("privateField");
+        Field privateField = CLAZZ.getDeclaredField("privateField");
         privateField.setAccessible(true);
-        privateField.set(reflection, (String) "new value");
+        privateField.set(REFLECTION, "new value");
         
-        System.out.println(privateField.get(reflection));
-        System.out.println(clazz.getDeclaredField("publicField").getName());
-        System.out.println(clazz.getDeclaredField("protectedField").getType().getSimpleName());
+        System.out.println(privateField.get(REFLECTION));
+        System.out.println(CLAZZ.getDeclaredField("publicField").getName());
+        System.out.println(CLAZZ.getDeclaredField("protectedField").getType().getSimpleName());
     }
 
     // Задание 2
     @Test
     public void secondTaskTest() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        Method method = clazz.getDeclaredMethod("privateMethod");
+        Method method = CLAZZ.getDeclaredMethod("privateMethod");
         method.setAccessible(true);
-        System.out.println(method.invoke(reflection));
-
-        Arrays.stream(clazz.getSuperclass().getMethods()).forEach(x -> System.out.println(x.getName()));
+        System.out.println(method.invoke(REFLECTION));
+        Arrays.stream(CLAZZ.getSuperclass().getDeclaredMethods()).forEach(x -> System.out.println(x.getName()));
         Arrays.stream(method.getExceptionTypes()).forEach(x -> System.out.println(x.getSimpleName()));
     }
 
     // Задание 3
     @Test
     public void thirdTaskTest() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
-        Constructor<Reflection> constructor = Reflection.class.getDeclaredConstructor(String.class);
+        Constructor<Reflection> constructor = Reflection.class.getConstructor(String.class);
         System.out.println(constructor);
         
         Constructor<Reflection> privateConstructor = Reflection.class.getDeclaredConstructor(String.class, String.class, String.class); 
