@@ -47,7 +47,6 @@ public class multithreadingTests {
                 e.printStackTrace();
             }
         });
-
         new Thread(producer).start();
         new Thread(consumer).start();
     }
