@@ -47,9 +47,9 @@ public class multithreadingTests {
                 e.printStackTrace();
             }
         });
+        new Thread(producer).start();
+        new Thread(consumer).start();
 
-        producer.start();
-        consumer.start();
     }
 
     // Задание 5
