@@ -48,8 +48,8 @@ public class multithreadingTests {
             }
         });
 
-        producer.start();
-        consumer.start();
+        new Thread(producer).start();
+        new Thread(consumer).start();
     }
 
     // Задание 5

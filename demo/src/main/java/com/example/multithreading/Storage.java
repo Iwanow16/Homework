@@ -2,7 +2,7 @@ package com.example.multithreading;
 
 public class Storage {
     
-    private volatile int stuff = 0;
+    private int stuff = 0;
 
     public synchronized void addStuff() throws InterruptedException {
         for (int i = 0; i < 15; i++) {
