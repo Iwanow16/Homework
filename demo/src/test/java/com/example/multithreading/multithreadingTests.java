@@ -49,7 +49,6 @@ public class multithreadingTests {
         });
         new Thread(producer).start();
         new Thread(consumer).start();
-
     }
 
     // Задание 5
